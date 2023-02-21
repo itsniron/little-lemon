@@ -1,2 +1,3 @@
-# little-lemon
+# Little Lemon Website
+
 Little Lemon
