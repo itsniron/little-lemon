@@ -6,7 +6,7 @@ import Dish from "./Dish";
 
 const Menu = () => {
   return (
-    <div className="Menu">
+    <div className="menu">
       <Dish
         image={GreekSalad}
         itemname="Greek Salad"

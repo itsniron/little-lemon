@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
+const BookingForm = ({ availableTimes, setAvailableTimes, submitFormData }) => {
   const initDate = new Date();
   initDate.setDate(initDate.getDate() + 1);
   const YYYY = initDate.getFullYear();
@@ -9,15 +9,9 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
 
   const [date, setDate] = useState(YYYY + "-" + MM + "-" + DD);
   const [time, setTime] = useState("17:00");
+  const [name, setName] = useState("");
   const [guests, setGuests] = useState(2);
   const [occassion, setOccassion] = useState("none");
-
-  function isValidDate(dateString) {
-    const yyyymmdd = dateString.split("-");
-    const dateObj = new Date(parseInt(yyyymmdd[0]), parseInt(yyyymmdd[1]) - 1, parseInt(yyyymmdd[2]));
-    if (dateObj <= new Date()) return false;
-    return true;
-  }
 
   function getDateObject(dateString) {
     const yyyymmdd = dateString.split("-");
@@ -26,12 +20,9 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
   }
 
   function handleDateChange(e) {
-    if (!isValidDate(e.target.value)) {
-      alert(`Sorry! Reservations not available for this date!`);
-      return;
-    }
     const dateObject = getDateObject(e.target.value);
     setDate(e.target.value);
+    console.log(dateObject);
     setAvailableTimes({ setBookingDate: dateObject });
   }
 
@@ -43,12 +34,16 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
       guests: guests,
       occassion: occassion,
     };
-    submitForm(reservation);
+    submitFormData(reservation);
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>Reserve a table</h1>
+      <div className="form-group">
+        <label htmlFor="Name">Name</label>
+        <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
+      </div>
       <div className="form-group">
         <label htmlFor="Date">Date</label>
         <input type="date" name="date" value={date} onChange={handleDateChange} required />

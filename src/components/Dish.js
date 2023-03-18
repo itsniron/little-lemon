@@ -2,7 +2,7 @@ import React from "react";
 
 const Dish = (props) => {
   return (
-    <div className="Dish">
+    <div className="dish">
       <img src={props.image} alt={props.itemname} />
       <div>
         <h4>{props.itemname}</h4>
