@@ -1,5 +1,4 @@
 import React from "react";
-import ApprovalAnimated from "../assets/icons8-approval.gif";
 import Footer from "./Footer";
 import Header from "./Header";
 
