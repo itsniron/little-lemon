@@ -23,11 +23,13 @@ import * as Yup from "yup";
 // import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = ({ availableTimes, setAvailableTimes, submitFormData }) => {
+  const initialDate = new Date();
+  initialDate.setDate(initialDate.getDate() + 1);
   const formik = useFormik({
     initialValues: {
       firstName: "",
       email: "",
-      date: new Date(),
+      date: initialDate,
       type: "",
     },
     validationSchema: Yup.object().shape({
