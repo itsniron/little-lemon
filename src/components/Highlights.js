@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu";
+import Specials from "./Specials";
 
 const Highlights = () => {
   return (
@@ -9,7 +9,7 @@ const Highlights = () => {
           <h2>Specials</h2>
           <button>Online Menu</button>
         </div>
-        <Menu />
+        <Specials />
       </div>
     </section>
   );

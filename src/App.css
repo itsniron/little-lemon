@@ -57,11 +57,12 @@ header > div > ul > li > a {
 }
 #hero .content {
   width: 20vw;
+  position: relative;
 }
 #hero img {
   position: absolute;
   width: 30vw;
-  height: 60vh;
+  height: 500px;
   object-fit: cover;
   top: 3vh;
   right: 14.6vw;
@@ -130,7 +131,7 @@ header > div > ul > li > a {
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid #edefee;
-  box-shadow: 5px 5px 5px px rgb(192, 192, 192);
+  box-shadow: 5px 5px 5px 0px rgb(192, 192, 192);
 }
 .dish img {
   object-fit: cover;
@@ -282,9 +283,6 @@ header > div > ul > li > a {
   font-weight: 500;
 }
 
-#booktable {
-  /* background-color: var(--color-primary); */
-}
 form {
   font-family: "Karla", sans-serif;
   margin: auto;
@@ -295,57 +293,6 @@ form > h1 {
   color: var(--color-primary);
   font-size: 40px;
   font-weight: 600;
-}
-input,
-select {
-  display: block;
-  width: 100%;
-  margin: 0.5vh 0;
-  padding: 1vw;
-  font-size: 1rem;
-  -ms-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  outline-color: var(--color-primary);
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--color-primary);
-  color: var(--color-primary);
-}
-input:focus,
-select:focus {
-  outline: none;
-}
-input:hover,
-select:hover {
-  background-color: #ebebeb;
-  cursor: pointer;
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-  padding-left: 35vw;
-}
-label {
-  margin-top: 3vh;
-  display: block;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-primary);
-}
-input[type="submit"] {
-  margin-top: 4vh;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-  background-color: var(--color-secondary);
-  border-radius: 8px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.2s ease;
-}
-input[type="submit"]:hover {
-  font-size: 22px;
 }
 
 .confirmedbooking {
@@ -482,7 +429,7 @@ input[type="submit"]:hover {
   #hero img {
     position: absolute;
     width: 40vw;
-    height: 50vh;
+    height: 400px;
     top: 3vh;
     right: 5vw;
     border-radius: 1vh;

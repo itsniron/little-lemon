@@ -18,10 +18,10 @@ const Header = () => {
             <Link to="/booking">Reservations</Link>
           </li>
           <li>
-            <Link to="/order">Order-Online</Link>
+            <Link to="/order">Order</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about-us">About</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>

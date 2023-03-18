@@ -1,10 +1,14 @@
 import "./App.css";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./components/Home";
 import Booking from "./components/Booking";
 import { fetchAPI, submitAPI } from "./server/api";
 import ConfirmedBooking from "./components/ConfirmedBooking";
+import Menu from "./components/Menu";
+import Order from "./components/Order";
+import AboutUs from "./components/AboutUs";
+import Login from "./components/Login";
 
 function App() {
   const navigate = useNavigate();
@@ -25,7 +29,7 @@ function App() {
   function submitFormData(formData) {
     const success = submitAPI(formData);
     if (success) {
-      navigate("/confirmedbooking");
+      navigate("/confirmedbooking", { state: { name: formData.firstName } });
     }
   }
 
@@ -41,6 +45,10 @@ function App() {
           element={<Booking availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submitFormData={submitFormData} />}
         />
         <Route path="/confirmedbooking" element={<ConfirmedBooking />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
